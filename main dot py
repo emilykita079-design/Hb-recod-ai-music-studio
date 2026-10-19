@@ -1,1 +1,6 @@
+def main():
+    print("Welcome to HB RECORD AI MUSIC STUDIO!")
+    print("Your music studio is ready to begin.")
 
+if __name__ == "__main__":
+    main()
