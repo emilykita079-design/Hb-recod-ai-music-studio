@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HB RECORD - AI MUSIC STUDIO</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #10101a;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+    .studio {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    h1 { color: #00e5ff; }
+    .box {
+      background: #202033;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 15px;
+    }
+    input, textarea, select, button {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    button {
+      background: #00e5ff;
+      color: #10101a;
+      font-weight: bold;
+    }
+    .note { color: #ccccdd; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="studio">
+    <h1>🎵 HB RECORD</h1>
+    <p>AI MUSIC STUDIO</p>
+    <p>Tengeneza muziki wako kwa ubunifu wako.</p>
+
+    <div class="box">
+      <h2>🎤 Tengeneza Wimbo</h2>
+      <textarea id="lyrics" placeholder="Andika maelezo ya wimbo unaotaka..."></textarea>
+      <select id="genre">
+        <option>Gospel</option>
+        <option>Bongo Flava</option>
+        <option>Singeli</option>
+        <option>Hip Hop / Rap</option>
+        <option>R&B</option>
+        <option>Afrobeat</option>
+      </select>
+      <select id="language">
+        <option>Kiswahili</option>
+        <option>English</option>
+        <option>Lugha nyingine</option>
+      </select>
+      <button onclick="prepareSong()">Andaa Ombi la Wimbo</button>
+      <p id="message" class="note">
+        Studio yako inaanza hapa.
+      </p>
+    </div>
+
+    <div class="box">
+      <h2>🥁 Tengeneza Beat</h2>
+      <p>Sehemu ya kuandaa midundo itaendelezwa.</p>
+      <button onclick="alert('Kipengele cha beat bado kinajengwa.')">
+        Fungua Beat Studio
+      </button>
+    </div>
+
+    <p class="note">
+      HB RECORD — AI MUSIC STUDIO
+    </p>
+  </div>
+
+  <script>
+    function prepareSong() {
+      const lyrics = document.getElementById("lyrics").value.trim();
+      const genre = document.getElementById("genre").value;
+      const language = document.getElementById("language").value;
+      const message = document.getElementById("message");
+
+      if (!lyrics) {
+        message.textContent = "Tafadhali andika maelezo ya wimbo kwanza.";
+        return;
+      }
+
+      message.textContent =
+        "Ombi lako limeandaliwa. Aina: " + genre +
+        ". Lugha: " + language +
+        ". Mfumo wa AI wa kutengeneza sauti bado unahitaji kuunganishwa.";
+    }
+  </script>
+</body>
+</html>
